@@ -1,26 +1,30 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const useNASA = ({ today }) => {
-
+const useNASA = () => {
   const [apod, setApod] = useState({});
-  const [date, setDate] = useState(today);
   
   const NASA_URL = "https://api.nasa.gov/";
-  const NASA_API_KEY = "UAON1V5NHw2kBvmeW8JCJbC6hYAVtuhj03MFPSpP";
+  const env = "UAON1V5NHw2kBvmeW8JCJbC6hYAVtuhj03MFPSpP"; 
+  // const env = import.meta.env.VITE_NASA_API_KEY; // 
   
   const getApod = async (date) => {
     const data = await axios.get(
-      `${NASA_URL}planetary/apod?date=${date}&api_key=${NASA_API_KEY}`
+      `${NASA_URL}planetary/apod?date=${date}&api_key=${env}`
     );
     setApod(data.data);
   };
   
-  useEffect(() => {
-    getApod(date);
-  }, [date]);
+  const getDate = () => {
+    const today = new Date(Date.now()).toISOString().slice(0, 10);
+    return today;
+  };
 
-  return { apod, date, setDate };
+  useEffect(() => {
+    getApod(getDate());
+  }, []);
+
+  return { apod, getDate };
 };
 
 export default useNASA;
