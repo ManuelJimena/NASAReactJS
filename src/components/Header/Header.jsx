@@ -24,7 +24,6 @@ const Header = ({ logo, logoAlt }) => {
         <a href="#contact">contacto</a>
       </nav>
       <a href="#" className="no-action-link"></a>
-      <a href="#" className="no-action-link"></a>
       <a href="#home" className="logo">
         <img src={logo} alt={logoAlt} />
       </a>
