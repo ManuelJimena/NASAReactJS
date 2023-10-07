@@ -1,30 +1,23 @@
-import { useRef, useState } from 'react';
-import './Header.css';
+import "./Header.css";
+import { useState } from 'react';
 
 const Header = ({ logo, logoAlt }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleMenuClick = () => {
-    setMenuOpen((prevOpen) => !prevOpen);
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
   };
-
-  const menuBtnRef = useRef(null);
-  const navbarRef = useRef(null);
-
-  const menuBtnClass = `fas fa-bars icons ${menuOpen ? 'fa-times' : ''}`;
-  const navbarClass = `navbar ${menuOpen ? 'active' : ''}`;
 
   return (
     <header className="header" translate="no">
       <div
         id="menu-btn"
-        ref={menuBtnRef}
-        className={menuBtnClass}
-        onClick={handleMenuClick}
+        className={`fas ${menuOpen ? 'fa-times' : 'fa-bars'} icons`}
+        onClick={toggleMenu}
       ></div>
       <div className="nothing" id="null"></div>
 
-      <nav ref={navbarRef} className={navbarClass}>
+      <nav className={`navbar ${menuOpen ? 'active' : ''}`}>
         <a href="#home">inicio</a>
         <a href="#menu">burguers</a>
         <a href="#entrantes">entrantes</a>
