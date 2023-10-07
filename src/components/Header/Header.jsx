@@ -1,50 +1,37 @@
-import { useState } from "react";
-import "./Header.css";
+import { useRef, useState } from 'react';
+import './Header.css';
 
 const Header = ({ logo, logoAlt }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleMenuClick = () => {
-    setMenuOpen(!menuOpen);
+    setMenuOpen((prevOpen) => !prevOpen);
   };
 
-  const handleLinkClick = () => {
-    setMenuOpen(false);
-  };
+  const menuBtnRef = useRef(null);
+  const navbarRef = useRef(null);
+
+  const menuBtnClass = `fas fa-bars icons ${menuOpen ? 'fa-times' : ''}`;
+  const navbarClass = `navbar ${menuOpen ? 'active' : ''}`;
 
   return (
     <header className="header" translate="no">
-      <button
-        id="menu-icon"
-        aria-label="desplegar menú"
+      <div
+        id="menu-btn"
+        ref={menuBtnRef}
+        className={menuBtnClass}
         onClick={handleMenuClick}
-        className={menuOpen ? "open" : ""}
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      ></div>
       <div className="nothing" id="null"></div>
-      <nav className={`navbar ${menuOpen ? "activo" : ""}`} id="navbar">
-        <a href="#home" onClick={handleLinkClick}>
-          inicio
-        </a>
-        <a href="#menu" onClick={handleLinkClick}>
-          burgers
-        </a>
-        <a href="#entrantes" onClick={handleLinkClick}>
-          entrantes
-        </a>
+
+      <nav ref={navbarRef} className={navbarClass}>
+        <a href="#home">inicio</a>
+        <a href="#menu">burguers</a>
+        <a href="#entrantes">entrantes</a>
         <span className="space"></span>
-        <a href="#postres" onClick={handleLinkClick}>
-          postres
-        </a>
-        <a href="#menus" onClick={handleLinkClick}>
-          menus
-        </a>
-        <a href="#contact" onClick={handleLinkClick}>
-          contacto
-        </a>
+        <a href="#postres">postres</a>
+        <a href="#menús">menús</a>
+        <a href="#contact">contacto</a>
       </nav>
       <a href="#" className="no-action-link"></a>
       <a href="#home" className="logo">

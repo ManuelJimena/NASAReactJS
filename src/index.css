@@ -3,9 +3,9 @@
 :root {
   --black-color: #000;
   --grey-color: #d8d8d8;
-  --yellow-color: #fff200;
+  --red-color: #E8422D;
   --white-color: #fff;
-  --red-color: #12408D;
+  --blue-color: #12408D;
 }
 
 /* RESET */
@@ -40,7 +40,7 @@ html::-webkit-scrollbar-track {
 }
 
 html::-webkit-scrollbar-thumb {
-  background: var(--red-color);
+  background: var(--blue-color);
   border-radius: 5rem;
 }
 
