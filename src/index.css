@@ -45,20 +45,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 body {
-  background: url(https://res.cloudinary.com/dhjmt9vvq/image/upload/v1691710241/BlackBull/background_pkpcpr_ggaeft.webp);
-  background-attachment: fixed;
-  background-position: center;
-  overflow-x: hidden;
-}
-
-section {
-  padding: 3rem 9%;
-}
-
-@media (max-width: 1200px) {
-  section {
-    padding: 3rem 2rem;
-  }
+  background-image: url(https://res.cloudinary.com/dhjmt9vvq/image/upload/v1696710802/jeremy-thomas-4dpAqfTbvKA-unsplash_hnlgy2.jpg);
 }
 
 @media (max-width: 991px) {

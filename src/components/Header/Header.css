@@ -2,8 +2,8 @@
   /* position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  z-index: 1; */
+  right: 0; */
+  z-index: 1;
   background: var(--black-color);
   padding: 3rem 9%;
   display: -webkit-box;
@@ -80,7 +80,7 @@
     }
     .header .navbar {
       position: absolute;
-      top: 99%;
+      top: 75px;
       left: 0;
       right: 0;
       background: var(--black-color);
