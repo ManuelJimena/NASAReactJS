@@ -1,51 +1,74 @@
+/* PALETTE */
+
 :root {
-    --primary: #5e04d7;
-    --secondary: #ffffff;
-    --tertiary: #0c0c0c;
-    --quaternary: rgba(172, 172, 172, 0.363);
-    --quinary: #5e04d7;
-    --sextiary: #fdfdfd;
-  
-    --planta: #9bcc50;
-    --fuego: #ff9c54;
-    --agua: #6390f0;
-    --eléctrico: #f7d02c;
-    --hielo: #51c4e7;
-    --lucha: #d56723;
-    --veneno: #b97fc9;
-    --tierra: #da7c4d;
-    --volador: #83a2e3;
-    --psíquico: #f366b9;
-    --bicho: #a7b31f;
-    --roca: #a38c21;
-    --fantasma: #65539a;
-    --dragón: #0c69c8;
-    --siniestro: #5a5454;
-    --acero: #b5b8cf;
-    --hada: #fdb9e9;
-    --normal: #a8a77a;
-    font-family: 'Inclusive Sans', sans-serif;
+  --black-color: #000;
+  --grey-color: #d8d8d8;
+  --yellow-color: #fff200;
+  --white-color: #fff;
+  --red-color: #12408D;
+}
+
+/* RESET */
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+}
+
+/* GLOBAL STYLES */
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 8rem;
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: var(--black-color);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--red-color);
+  border-radius: 5rem;
+}
+
+body {
+  background: url(https://res.cloudinary.com/dhjmt9vvq/image/upload/v1691710241/BlackBull/background_pkpcpr_ggaeft.webp);
+  background-attachment: fixed;
+  background-position: center;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 3rem 9%;
+}
+
+@media (max-width: 1200px) {
+  section {
+    padding: 3rem 2rem;
   }
-  
-  * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+}
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
   }
-  
-  body {
-      background-color: var(--quaternary)
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
   }
-  
-  ul {
-    list-style: none;
-  }
-  
-  
-  [data-tema="oscuro"] {
-    --primary: #ffffff;
-    --secondary: #450094;
-    --tertiary: #ffffff;
-    --quaternary: #5e04d7;
-    --quinary: rgb(201, 201, 201);
-  }
+}

@@ -2,7 +2,7 @@ import './App.css'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Figure from './components/Figure/Figure';
-import logo from './assets/Nasa_Logo.png'
+import Header from './components/Header/Header';
 
 const App = () => {
 
@@ -38,9 +38,10 @@ useEffect(() => {
 
   return (
     <>
+    <Header logo="./src/assets/Nasa_logo.png" logoAlt="logo nasa" />
     <div className="App">
       <h2 className="title">
-        NASA API <img src={logo} className="logo" alt="NASA LOGO" />
+        NASA API
       </h2>
       <h1>Astronomy Picture of the Day</h1>
       <input type="date" id="photo-date" onChange={handleInput} />
