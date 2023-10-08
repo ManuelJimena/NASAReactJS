@@ -1,25 +1,13 @@
 import "./Figure.css";
 
-import React, { useState } from "react";
-
-const Figure = ({ data }) => {
-  const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
+const Figure = ({ data, date, handleInput }) => {
   const today = new Date().toISOString().slice(0, 10);
-
-  const handleInput = (ev) => {
-    setDate(ev.target.value);
-  };
 
   return (
     <div>
       <h2 className="title">NASA API</h2>
       <h1>Astronomy Picture of the Day</h1>
-      <input
-        type="date"
-        id="photo-date"
-        onChange={handleInput}
-        value={date}
-      />
+      <input type="date" id="photo-date" onChange={handleInput} value={date} />
       {date > today ? (
         <h2>Please choose a previous date</h2>
       ) : (
