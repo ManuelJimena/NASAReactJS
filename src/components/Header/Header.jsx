@@ -15,13 +15,11 @@ const Header = ({ logo, logoAlt }) => {
       <div className="nothing" id="null"></div>
 
       <nav className="navbar">
-        <a href="#home">inicio</a>
-        <a href="#menu">burguers</a>
-        <a href="#entrantes">entrantes</a>
+        <a href="#home">Home</a>
+        <a href="#apod">Apod</a>
         <span className="space"></span>
-        <a href="#postres">postres</a>
-        <a href="#menús">menús</a>
-        <a href="#contact">contacto</a>
+        <a href="#mars">Mars</a>
+        <a href="#gallery">Gallery</a>
       </nav>
       <a href="#" className="no-action-link"></a>
       <a href="#home" className="logo">
