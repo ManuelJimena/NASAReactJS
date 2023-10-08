@@ -6,8 +6,7 @@ import useNASA from './hooks/useNASA';
 const App = () => {
   const { apod, getDate, getApod } = useNASA();
 
-  const handleInput = (ev) => {
-    const date = ev.target.value;
+  const handleInput = (date) => {
     getApod(date);
   };
 

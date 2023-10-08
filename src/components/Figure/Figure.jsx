@@ -1,13 +1,32 @@
 import "./Figure.css";
+import { useState, useRef, useEffect } from "react";
 
-const Figure = ({ data, date, handleInput }) => {
+const Figure = ({ data, date: initialDate, handleInput }) => {
   const today = new Date().toISOString().slice(0, 10);
+  const inputRef = useRef(null);
+  const [date, setDate] = useState(initialDate);
+
+  useEffect(() => {
+    inputRef.current.value = date;
+  }, [date]);
+
+  const handleChange = (ev) => {
+    const date = ev.target.value;
+    setDate(date);
+    handleInput(date);
+  };
 
   return (
     <div>
       <h2 className="title">NASA API</h2>
       <h1>Astronomy Picture of the Day</h1>
-      <input type="date" id="photo-date" onChange={handleInput} value={date} />
+      <input
+        type="date"
+        id="photo-date"
+        onChange={handleChange}
+        value={date}
+        ref={inputRef}
+      />
       {date > today ? (
         <h2>Please choose a previous date</h2>
       ) : (

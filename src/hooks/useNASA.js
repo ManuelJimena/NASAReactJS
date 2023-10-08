@@ -20,7 +20,7 @@ const useNASA = () => {
   };
 
   useEffect(() => {
-    getApod(getDate());
+    getApod(getDate()); // cambiado para obtener APOD en la fecha actual
   }, []);
 
   return { apod, getDate, getApod };
