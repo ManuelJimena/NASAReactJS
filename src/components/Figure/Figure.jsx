@@ -17,9 +17,8 @@ const Figure = ({ data, date: initialDate, handleInput }) => {
   };
 
   return (
-    <div>
-      <h2 className="title">NASA API</h2>
-      <h1>Astronomy Picture of the Day</h1>
+    <div className="apod-container">
+      <h2>Astronomy Picture of the Day</h2>
       <input
         type="date"
         id="photo-date"
@@ -28,14 +27,14 @@ const Figure = ({ data, date: initialDate, handleInput }) => {
         ref={inputRef}
       />
       {date > today ? (
-        <h2>Please choose a previous date</h2>
+        <h3>Please choose a previous date</h3>
       ) : (
-        <div>
-          <img src={data.url} alt={data.title} />
+        <div className="apod-info">
+          <img src={data.url} alt={data.title} className="apod-img"/>
           <div className="window">
             <div className="title-bar">
               <button aria-label="Close" className="close"></button>
-              <h1 className="title">{data.title}</h1>
+              <h3 className="title">{data.title}</h3>
               <button aria-label="Resize" className="resize"></button>
             </div>
             <div className="details-bar">
