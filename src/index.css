@@ -46,7 +46,10 @@ html::-webkit-scrollbar-thumb {
 
 body {
   background-image: url(https://res.cloudinary.com/dhjmt9vvq/image/upload/c_scale,h_1080/v1697189463/4k_27_yvgafo.webp);
-  object-fit: cover;
+}
+
+main {
+  height: 80vh;
 }
 
 @media (max-width: 991px) {

@@ -1,10 +1,14 @@
 import "./NotFound.css"
+import { Link } from 'react-router-dom';
 
 const NotFound = () => {
 
     return (
         <div className="NotFound">
-            <h2 className="NotFound-text">NotFound</h2>
+            <img src="https://res.cloudinary.com/dhjmt9vvq/image/upload/v1697219458/21467706_q8uxfs.webp" alt="404 image"></img>
+            <Link to="/">
+                <button className="btn-notfound">Go to home</button>
+            </Link>
         </div>
     );
 };
