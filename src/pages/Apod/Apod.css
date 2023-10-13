@@ -8,7 +8,7 @@
 }
 
 .apod-container > h2{
-    font-size: 40px;
+    font-size: 35px;
     color: var(--white-color)
 }
 
@@ -16,7 +16,7 @@ input[type="date"] {
     border-radius: 5px;
     border: 2px solid #ccc;
     padding: 8px;
-    font-size: 1.5rem;
+    font-size: 0.9rem;
     margin: 2% 0%;
 
     &:focus {
@@ -34,8 +34,10 @@ input[type="date"] {
 
 .apod-container h3, span {
     color: var(--white-color);
+    font-size: 0.9rem;
 }
 
 .window-pane {
     color: var(--white-color);
+    font-size: 0.8rem;
 }

@@ -1,13 +1,19 @@
 footer {
-    background-color: var(--black-color)
+    background-color: var(--black-color);
+    height: 8vh;
 }
 
 .standard-dialog {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
 }
 
-.standard-dialog  > h2, a {
+.standard-dialog > h2 {
+    color: var(--white-color);
+    margin-top: 2%;
+}
+
+.dialog-text  > a {
     color: var(--white-color);
 }
