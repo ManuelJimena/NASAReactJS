@@ -1,19 +1,21 @@
-import "./Apod.css";
 import { useState, useRef, useEffect } from "react";
+import useNASA from '../../hooks/useNASA'; // importando el hook useNASA
+import "./Apod.css";
 
-const Apod = ({ data, date: initialDate, handleInput }) => {
+const Apod = () => {
   const today = new Date().toISOString().slice(0, 10);
   const inputRef = useRef(null);
-  const [date, setDate] = useState(initialDate);
+  const [date, setDate] = useState(today);
+  const { apod, getApod } = useNASA(); // utilizando el hook useNASA
 
   useEffect(() => {
     inputRef.current.value = date;
-  }, [date]);
+    getApod(date);
+  }, [date, getApod]);
 
   const handleChange = (ev) => {
     const date = ev.target.value;
     setDate(date);
-    handleInput(date);
   };
 
   return (
@@ -30,18 +32,18 @@ const Apod = ({ data, date: initialDate, handleInput }) => {
         <h3>Please choose a previous date</h3>
       ) : (
         <div className="apod-info">
-          <img src={data.url} alt={data.title} className="apod-img"/>
+          <img src={apod.url} alt={apod.title} className="apod-img"/>
           <div className="window">
             <div className="title-bar">
               <button aria-label="Close" className="close"></button>
-              <h3 className="title">{data.title}</h3>
+              <h3 className="title">{apod.title}</h3>
               <button aria-label="Resize" className="resize"></button>
             </div>
             <div className="details-bar">
               <span>{date}</span>
-              <span>{data?.copyright}</span>
+              <span>{apod?.copyright}</span>
             </div>
-            <div className="window-pane">{data.explanation}</div>
+            <div className="window-pane">{apod.explanation}</div>
           </div>
         </div>
       )}
