@@ -4,8 +4,7 @@ import axios from 'axios';
 const useNASA = () => {
   const [apod, setApod] = useState({});
   const NASA_URL = "https://api.nasa.gov/";
-  const env = "UAON1V5NHw2kBvmeW8JCJbC6hYAVtuhj03MFPSpP"; 
-  // const env = import.meta.env.VITE_NASA_API_KEY;
+  const env = import.meta.env.VITE_NASA_API_KEY;
 
   const getApod = async (date) => {
     const data = await axios.get(

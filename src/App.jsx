@@ -1,5 +1,7 @@
 import './App.css';
+import { Outlet } from 'react-router-dom'
 import Figure from './components/Figure/Figure';
+import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import useNASA from './hooks/useNASA';
 
@@ -14,9 +16,10 @@ const App = () => {
     <>
       <Header logo="./src/assets/Nasa_logo.png" logoAlt="logo nasa" />
       <Figure data={apod} date={getDate()} handleInput={handleInput} />
-      <div className="standard-dialog center">
-        <h1 className="dialog-text">@Manuel Jimena - 2023 - <a href="https://api.nasa.gov/">https://api.nasa.gov/</a></h1>
-      </div>
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
     </>
   );
 };

@@ -1,4 +1,5 @@
 import "./Header.css";
+import { NavLink } from 'react-router-dom'
 
 const Header = ({ logo, logoAlt }) => {
   
@@ -13,13 +14,12 @@ const Header = ({ logo, logoAlt }) => {
     <header className="header" translate="no">
       <div id="menu-btn" className="fas fa-bars icons" onClick={menuBtnClick}></div>
       <div className="nothing" id="null"></div>
-
       <nav className="navbar">
-        <a href="#home">Home</a>
-        <a href="#apod">Apod</a>
+        <NavLink to="">Home</NavLink>
+        <NavLink to="apod">Apod</NavLink>
         <span className="space"></span>
-        <a href="#mars">Mars</a>
-        <a href="#gallery">Gallery</a>
+        <NavLink to="gallery">Gallery</NavLink>
+        <NavLink to="mars">Mars</NavLink>
       </nav>
       <a href="#" className="no-action-link"></a>
       <a href="#home" className="logo">

@@ -31,3 +31,11 @@ input[type="date"] {
     width: 600px;
     object-fit: fill;
 }
+
+.apod-container h3, span {
+    color: var(--white-color);
+}
+
+.window-pane {
+    color: var(--white-color);
+}
