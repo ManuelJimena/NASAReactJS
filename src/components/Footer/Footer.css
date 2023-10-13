@@ -1,8 +1,13 @@
 footer {
-    display: flex;
-    justify-content: center;
+    background-color: var(--black-color)
 }
 
-footer > h2, a {
+.standard-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.standard-dialog  > h2, a {
     color: var(--white-color);
 }
