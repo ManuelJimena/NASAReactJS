@@ -3,9 +3,7 @@ import "./Mars.css"
 const Mars = () => {
 
     return (
-        <div className="Mars">
-            <h2 className="Mars-text">Mars</h2>
-        </div>
+        <h2>Mars</h2>
     );
 };
 
